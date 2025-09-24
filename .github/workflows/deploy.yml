@@ -30,15 +30,6 @@ jobs:
           deploy.yml
           .github/**
           tests/**
-        exclude: |
-          **/.git*
-          **/.git*/**
-          **/node_modules/**
-          .env.example
-          README.md
-          deploy.yml
-          .github/**
-          tests/**
           
     - name: Deployment notification
       run: |
