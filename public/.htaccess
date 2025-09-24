@@ -13,6 +13,9 @@ RedirectMatch 404 ^/src/.*$
     Deny from all
 </FilesMatch>
 
+# Configuration de l'index par défaut
+DirectoryIndex index.php
+
 # Activation de la réécriture d'URL
 RewriteEngine On
 
