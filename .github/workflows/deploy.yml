@@ -12,24 +12,24 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
         
-    - name: Deploy application files to parent directory
+    - name: Deploy to OVH via FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: ${{ secrets.FTP_HOST }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./src/
-        server-dir: ./src/
-        dangerous-clean-slate: true
-        
-    - name: Deploy public files to www
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-      with:
-        server: ${{ secrets.FTP_HOST }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./public/
+        local-dir: ./
         server-dir: ./www/
+        dangerous-clean-slate: true
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          .env.example
+          README.md
+          deploy.yml
+          .github/**
+          tests/**
         exclude: |
           **/.git*
           **/.git*/**
