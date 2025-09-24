@@ -37,7 +37,7 @@ RewriteRule ^(.*)$ - [L]
 # Redirection de toutes les autres requêtes vers index.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ /index.php [QSA,L]
+RewriteRule ^(.*)$ index.php [QSA,L]
 
 # Configuration de sécurité
 ServerSignature Off
