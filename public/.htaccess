@@ -1,199 +1,86 @@
-# ========================================
-# FABIO SERRA - CONFIGURATION APACHE
-# Optimisé pour performances et sécurité
-# ========================================
+# Sécurité - Empêcher l'accès aux fichiers sensibles
+<Files ~ "\.(htaccess|htpasswd|ini|log|sh|inc|bak|config)$">
+    Order allow,deny
+    Deny from all
+</Files>
 
-# ========================================
-# RÉÉCRITURE D'URL
-# ========================================
+# Empêcher l'accès au dossier src depuis le web
+RedirectMatch 404 ^/src/.*$
+
+# Empêcher l'accès aux fichiers de configuration et backup
+<FilesMatch "^(composer\.(json|lock)|package(-lock)?\.json|\.env|\.git.*|README\.md)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Activation de la réécriture d'URL
 RewriteEngine On
-RewriteBase /
 
-# Redirection HTTPS obligatoire (site sécurisé)
+# Forcer HTTPS
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Redirection www vers non-www
-RewriteCond %{HTTP_HOST} ^www\.fabioserra\.fr$ [NC]
-RewriteRule ^(.*)$ https://fabioserra.fr/$1 [L,R=301]
+# Redirection www vers non-www (ou vice-versa selon votre préférence)
+# RewriteCond %{HTTP_HOST} ^www\.fabioserra\.fr$ [NC]
+# RewriteRule ^(.*)$ https://fabioserra.fr/$1 [R=301,L]
 
-# URLs propres - Router principal
+# Gestion des assets statiques
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteCond %{REQUEST_URI} ^/assets/
+RewriteRule ^(.*)$ - [L]
+
+# Gestion des fichiers statiques à la racine
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteCond %{REQUEST_URI} ^/(robots\.txt|sitemap\.xml|favicon\.ico)$
+RewriteRule ^(.*)$ - [L]
+
+# Redirection de toutes les autres requêtes vers index.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} !^/(assets|images|css|js)/
-RewriteRule ^(.*)$ index.php [QSA,L]
+RewriteRule ^(.*)$ /index.php [QSA,L]
 
-# ========================================
-# MISE EN CACHE
-# ========================================
+# Configuration de sécurité
+ServerSignature Off
+Header always set X-Content-Type-Options nosniff
+Header always set X-Frame-Options SAMEORIGIN
+Header always set X-XSS-Protection "1; mode=block"
+
+# Compression GZIP
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript
+</IfModule>
+
+# Cache pour les assets statiques
 <IfModule mod_expires.c>
     ExpiresActive On
-    
-    # Images - Cache long
-    ExpiresByType image/jpeg "access plus 1 year"
-    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
     ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
     ExpiresByType image/gif "access plus 1 year"
     ExpiresByType image/webp "access plus 1 year"
     ExpiresByType image/svg+xml "access plus 1 year"
-    ExpiresByType image/ico "access plus 1 year"
-    ExpiresByType image/x-icon "access plus 1 year"
-    
-    # CSS et JavaScript
-    ExpiresByType text/css "access plus 1 month"
-    ExpiresByType application/javascript "access plus 1 month"
-    ExpiresByType text/javascript "access plus 1 month"
-    
-    # Polices
     ExpiresByType font/woff "access plus 1 year"
     ExpiresByType font/woff2 "access plus 1 year"
-    ExpiresByType application/font-woff "access plus 1 year"
-    ExpiresByType application/font-woff2 "access plus 1 year"
-    
-    # Documents
-    ExpiresByType application/pdf "access plus 1 month"
-    
-    # HTML - Cache court pour contenu dynamique
-    ExpiresByType text/html "access plus 1 hour"
 </IfModule>
 
-# ========================================
-# COMPRESSION GZIP
-# ========================================
-<IfModule mod_deflate.c>
-    # Activer la compression pour ces types de fichiers
-    AddOutputFilterByType DEFLATE text/plain
-    AddOutputFilterByType DEFLATE text/html
-    AddOutputFilterByType DEFLATE text/xml
-    AddOutputFilterByType DEFLATE text/css
-    AddOutputFilterByType DEFLATE text/javascript
-    AddOutputFilterByType DEFLATE application/xml
-    AddOutputFilterByType DEFLATE application/xhtml+xml
-    AddOutputFilterByType DEFLATE application/rss+xml
-    AddOutputFilterByType DEFLATE application/javascript
-    AddOutputFilterByType DEFLATE application/x-javascript
-    AddOutputFilterByType DEFLATE application/json
-    AddOutputFilterByType DEFLATE image/svg+xml
-    
-    # Exclure les fichiers déjà compressés
-    SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png|webp)$ no-gzip dont-vary
-    SetEnvIfNoCase Request_URI \.(?:exe|t?gz|zip|bz2|sit|rar)$ no-gzip dont-vary
-</IfModule>
-
-# ========================================
-# SÉCURITÉ
-# ========================================
+# Configuration des en-têtes de cache
 <IfModule mod_headers.c>
-    # Protection contre le clickjacking
-    Header always set X-Frame-Options "DENY"
-    
-    # Protection XSS
-    Header always set X-XSS-Protection "1; mode=block"
-    
-    # Empêcher le sniffing de contenu
-    Header always set X-Content-Type-Options "nosniff"
-    
-    # Politique de référent
-    Header always set Referrer-Policy "strict-origin-when-cross-origin"
-    
-    # HSTS - Forcer HTTPS (site sécurisé)
-    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
-    
-    # Permissions Policy (anciennement Feature Policy)
-    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(self), payment=()"
-    
-    # Content Security Policy (ajustez selon vos besoins)
-    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; upgrade-insecure-requests"
-    
-    # Cache des ressources statiques
-    <FilesMatch "\.(css|js|png|jpg|jpeg|gif|webp|svg|ico|woff|woff2|pdf)$">
-        Header set Cache-Control "public, max-age=31536000, immutable"
-        Header unset ETag
+    <FilesMatch "\.(css|js|png|jpg|jpeg|gif|webp|svg|woff|woff2)$">
+        Header set Cache-Control "public, max-age=31536000"
     </FilesMatch>
-    
-    # Cache HTML plus court
-    <FilesMatch "\.(html|php)$">
-        Header set Cache-Control "public, max-age=3600, must-revalidate"
-    </FilesMatch>
-    
-    # Cookies sécurisés (HTTPS)
-    Header always edit Set-Cookie ^(.*)$ "$1; Secure; SameSite=Strict"
 </IfModule>
 
-# ========================================
-# PROTECTION DES FICHIERS
-# ========================================
-
-# Protéger les fichiers de configuration
-<FilesMatch "^(\.env|\.htaccess|composer\.json|composer\.lock|\.git.*|README\.md)$">
-    Require all denied
-</FilesMatch>
-
-# Protéger les dossiers système
-RedirectMatch 404 ^/(src|vendor|\.git)/
-
-# Protéger les fichiers PHP dans certains dossiers
-<Directory "*/src/*">
-    Require all denied
-</Directory>
-
-# ========================================
-# OPTIMISATIONS
-# ========================================
-
-# ETag optimisé
-FileETag MTime Size
-
-# Protection anti-hotlinking pour les images
-RewriteCond %{HTTP_REFERER} !^$
-RewriteCond %{HTTP_REFERER} !^https?://(www\.)?fabioserra\.fr [NC]
-RewriteCond %{REQUEST_URI} \.(jpe?g|png|gif|webp|svg)$ [NC]
-RewriteRule \.(jpe?g|png|gif|webp|svg)$ - [F,L]
-
-# ========================================
-# PAGES D'ERREUR PERSONNALISÉES
-# ========================================
-ErrorDocument 404 /404.php
-ErrorDocument 403 /403.php
-ErrorDocument 500 /500.php
-
-# ========================================
-# TYPES MIME
-# ========================================
-<IfModule mod_mime.c>
-    # WebP
-    AddType image/webp .webp
-    
-    # Polices modernes
-    AddType font/woff .woff
-    AddType font/woff2 .woff2
-    
-    # Manifeste web
-    AddType application/manifest+json .webmanifest
-    
-    # CSS et JS avec charset
-    AddCharset utf-8 .css .js
+# Configuration PHP (si mod_php est activé)
+<IfModule mod_php.c>
+    php_flag display_errors Off
+    php_flag log_errors On
+    php_value error_log /path/to/error.log
+    php_value upload_max_filesize 10M
+    php_value post_max_size 10M
 </IfModule>
 
-# ========================================
-# PERFORMANCE
-# ========================================
-
-# Désactiver les requêtes OPTIONS inutiles
-RewriteCond %{REQUEST_METHOD} ^OPTIONS
-RewriteRule .* - [R=405,L]
-
-# Empêcher l'accès aux fichiers de sauvegarde
-<FilesMatch "\.(bak|backup|old|tmp|temp)$">
-    Require all denied
-</FilesMatch>
-
-# Limitation du taux de requêtes (si mod_evasive disponible)
-# <IfModule mod_evasive24.c>
-#     DOSHashTableSize    2048
-#     DOSPageCount        10
-#     DOSSiteCount        50
-#     DOSPageInterval     1
-#     DOSSiteInterval     1
-#     DOSBlockingPeriod   600
-# </IfModule>
+# Pages d'erreur personnalisées (créez ces fichiers si nécessaire)
+# ErrorDocument 404 /error/404.php
+# ErrorDocument 500 /error/500.php
