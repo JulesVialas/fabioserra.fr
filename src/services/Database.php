@@ -7,6 +7,7 @@ class Database
     
     public function __construct()
     {
+        Config::load();
         $host = Config::get('DB_HOST', 'localhost');
         $dbname = Config::get('DB_NAME', 'fabioserra');
         $username = Config::get('DB_USER', 'root');
