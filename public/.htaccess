@@ -20,9 +20,9 @@ RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Redirection www vers non-www (ou vice-versa selon votre préférence)
-# RewriteCond %{HTTP_HOST} ^www\.fabioserra\.fr$ [NC]
-# RewriteRule ^(.*)$ https://fabioserra.fr/$1 [R=301,L]
+# Redirection www vers non-www
+RewriteCond %{HTTP_HOST} ^www\.fabioserra\.fr$ [NC]
+RewriteRule ^(.*)$ https://fabioserra.fr/$1 [R=301,L]
 
 # Gestion des assets statiques
 RewriteCond %{REQUEST_FILENAME} -f
