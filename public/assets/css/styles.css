@@ -64,7 +64,7 @@ html {
 }
 
 body {
-    font-family: var(--font-family);
+    font-family: 'Montserrat', Arial, sans-serif;
     line-height: var(--line-height-base);
     color: var(--dark-gray);
     background: var(--white);
@@ -1020,4 +1020,19 @@ a:focus {
     table {
         page-break-inside: avoid;
     }
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/assets/fonts/Montserrat-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/assets/fonts/Montserrat-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }

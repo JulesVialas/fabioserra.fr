@@ -48,10 +48,7 @@ $seo = SEO::getPageData($uri);
     <?= SEO::generateStructuredData($uri) ?>
     </script>
     
-    <!-- Fonts and Styles -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Styles -->
     <link rel="stylesheet" href="/assets/css/styles.css">
     
     <!-- Favicon -->

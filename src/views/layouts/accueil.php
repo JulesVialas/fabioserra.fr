@@ -18,6 +18,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/../src/views/components/contact.php';
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/../src/views/components/footer.php';
 ?>
-<script src="/assets/js/script.js"></script>
+<script src="/assets/js/script.js" defer></script>
+<script src="https://widget.taggbox.com/embed.min.js" defer></script>
 </body>
 </html>
