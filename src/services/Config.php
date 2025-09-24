@@ -5,7 +5,9 @@ class Config
     
     public static function load()
     {
-        $envFile = $_SERVER['DOCUMENT_ROOT'] . '/../.env';
+    $envFile = $_SERVER['DOCUMENT_ROOT'] . '/../.env';
+    // DEBUG : Affiche le chemin utilisé pour le .env
+    echo '<pre>Chemin .env utilisé : ' . $envFile . '</pre>';
         if (file_exists($envFile)) {
             $lines = file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
             foreach ($lines as $line) {
