@@ -3,8 +3,6 @@ name: Deploy to OVH via FTP
 on:
   push:
     branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
 
 jobs:
   deploy:
@@ -13,32 +11,6 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-      
-    - name: Setup PHP
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: '8.1'
-        
-    - name: Validate composer.json (if exists)
-      run: |
-        if [ -f composer.json ]; then
-          composer validate --strict
-        fi
-        
-    - name: Create .env from secrets
-      run: |
-        echo "DB_HOST=${{ secrets.DB_HOST }}" > .env
-        echo "DB_NAME=${{ secrets.DB_NAME }}" >> .env
-        echo "DB_USER=${{ secrets.DB_USER }}" >> .env
-        echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
-        echo "DB_CHARSET=utf8mb4" >> .env
-        echo "APP_ENV=prod" >> .env
-        
-    - name: Remove sensitive files
-      run: |
-        rm -f public/setup.php
-        rm -f public/create_admin.php
-        rm -f setup_database.sql
         
     - name: Deploy to OVH via FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
@@ -47,7 +19,7 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./
-        server-dir: ./
+        server-dir: ./www/
         exclude: |
           **/.git*
           **/.git*/**

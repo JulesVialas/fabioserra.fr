@@ -11,7 +11,7 @@
                 <ul class="footer-links">
                     <li><a href="/">Accueil</a></li>
                     <li><a href="/#actualites">Actualités</a></li>
-                    <li><a href="/#consultation-citoyenne">Consultation Citoyenne</a></li>
+                    <li><a href="/#consultation-citoyenne">Consultation</a></li>
                     <li><a href="/#contact">Contact</a></li>
                 </ul>
             </div>
