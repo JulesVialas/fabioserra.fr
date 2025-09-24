@@ -8,7 +8,7 @@
 /* Variables CSS pour cohérence et maintenance */
 :root {
     /* Couleurs Rassemblement National */
-    --primary-blue: #003D82;
+    --primary-blue: rgba(46,83,123,1);
     --primary-red: #E1000F;
     --white: #FFFFFF;
     --light-gray: #F5F5F5;
@@ -182,7 +182,7 @@ header {
 }
 
 .nav-brand img {
-    height: 60px;
+    height: 50px;
     width: auto;
     transition: transform var(--transition-normal);
 }
@@ -209,7 +209,7 @@ header {
 .burger-line {
     width: 100%;
     height: 3px;
-    background: var(--primary-blue);
+    background: var(--black); /* Burger menu en noir */
     border-radius: 2px;
     transition: all var(--transition-normal);
     transform-origin: center;
@@ -230,7 +230,7 @@ header {
 }
 
 .nav-link {
-    color: var(--primary-blue);
+    color: var(--black); /* Changer les liens en noir */
     font-weight: 600;
     font-size: var(--font-size-lg);
     padding: var(--spacing-sm) var(--spacing-md);
@@ -281,7 +281,7 @@ header {
     }
     
     .nav-link {
-        color: var(--primary-blue) !important;
+        color: var(--black) !important; /* Changer les liens mobile en noir */
         font-size: var(--font-size-lg);
         font-weight: 600;
         padding: var(--spacing-lg) var(--spacing-xl);
@@ -296,7 +296,6 @@ header {
     .nav-link:focus {
         color: var(--white) !important;
         background: var(--primary-blue);
-        outline: none; /* Supprimer l'encadrement rouge */
     }
     
     .nav-link::after {
@@ -344,7 +343,7 @@ header {
     }
     
     .nav-link {
-        color: var(--primary-blue) !important;
+        color: var(--black) !important; /* Liens desktop en noir */
         padding: var(--spacing-sm) var(--spacing-md) !important;
     }
 }
