@@ -9,7 +9,6 @@ class Config
         if (file_exists($envFile)) {
             $lines = file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
             foreach ($lines as $line) {
-                echo '<pre>Le fichier .env existe et est accessible.</pre>';
                 if (strpos($line, '=') !== false && strpos($line, '#') !== 0) {
                     list($key, $value) = explode('=', $line, 2);
                     self::$config[trim($key)] = trim($value);
