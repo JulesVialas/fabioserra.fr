@@ -33,4 +33,3 @@ jobs:
     - name: Deployment notification
       run: |
         echo "✅ Deployment completed successfully!"
-        echo "🌐 Site deployed to: https://fabioserra.fr"
