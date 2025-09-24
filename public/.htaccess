@@ -25,14 +25,14 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteCond %{HTTP_HOST} ^www\.fabioserra\.fr$ [NC]
 RewriteRule ^(.*)$ https://fabioserra.fr/$1 [R=301,L]
 
+# Gestion des fichiers statiques à la racine (robots.txt, sitemap.xml, favicon.ico)
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteCond %{REQUEST_URI} ^/(robots\.txt|sitemap\.xml|favicon\.ico)$
+RewriteRule ^(.*)$ - [L]
+
 # Gestion des assets statiques
 RewriteCond %{REQUEST_FILENAME} -f
 RewriteCond %{REQUEST_URI} ^/assets/
-RewriteRule ^(.*)$ - [L]
-
-# Gestion des fichiers statiques à la racine
-RewriteCond %{REQUEST_FILENAME} -f
-RewriteCond %{REQUEST_URI} ^/(robots\.txt|sitemap\.xml|favicon\.ico)$
 RewriteRule ^(.*)$ - [L]
 
 # Redirection de toutes les autres requêtes vers index.php
