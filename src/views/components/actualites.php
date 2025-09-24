@@ -5,7 +5,8 @@
             <p class="section-description">Suivez l'actualité de Muret et de notre campagne pour un avenir meilleur.</p>
         </div>
         <div class="actualites-content">
-            <div class="taggbox" style="width:100%;height:600px;overflow:auto;" data-widget-id="288883" website="1"></div>
+            <div class="taggbox" style="width:100%;height:100%;overflow:auto;" data-widget-id="288883" data-website="1"></div>
+            <script src="https://widget.taggbox.com/embed.min.js" type="text/javascript"></script>
         </div>
     </div>
 </section>

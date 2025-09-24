@@ -19,6 +19,5 @@ include $_SERVER['DOCUMENT_ROOT'] . '/../src/views/components/contact.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/../src/views/components/footer.php';
 ?>
 <script src="/assets/js/script.js"></script>
-<script src="https://widget.taggbox.com/embed.min.js" type="text/javascript"></script>
 </body>
 </html>
