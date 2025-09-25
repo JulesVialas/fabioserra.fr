@@ -2,7 +2,9 @@
     <div class="container">
         <nav class="navbar" role="navigation" aria-label="Navigation principale">
             <div class="nav-brand">
-                <img src="/assets/images/logo-header.webp" alt="Logo Retrouvons Muret avec Fabio Serra" class="logo"/>
+                <a href="/" aria-label="Retour à l'accueil">
+                    <img src="/assets/images/logo-header.webp" alt="Logo Retrouvons Muret avec Fabio Serra" class="logo"/>
+                </a>
             </div>
             <button class="burger-menu" id="burger-menu" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="nav-menu">
                 <span class="burger-line"></span>

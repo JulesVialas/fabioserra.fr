@@ -12,7 +12,39 @@ let isMenuOpen = false;
 document.addEventListener('DOMContentLoaded', function() {
     Navigation.init();
     Forms.init();
+    ScrollSpy.init();
 });
+
+// ScrollSpy pour surligner le lien actif dans la navbar
+const ScrollSpy = {
+    sections: [],
+    navLinks: [],
+    init: function() {
+        this.sections = document.querySelectorAll('section[id]');
+        this.navLinks = document.querySelectorAll('.nav-link[href^="#"], .nav-link[href^="/#"]');
+        if (this.sections.length && this.navLinks.length) {
+            window.addEventListener('scroll', this.onScroll.bind(this));
+            this.onScroll(); // initial
+        }
+    },
+    onScroll: function() {
+        let scrollPos = window.scrollY || window.pageYOffset;
+        let offset = 120; // Décalage pour header fixe
+        let currentId = null;
+        this.sections.forEach(section => {
+            if (scrollPos + offset >= section.offsetTop) {
+                currentId = section.id;
+            }
+        });
+        this.navLinks.forEach(link => {
+            link.classList.remove('active');
+            const href = link.getAttribute('href');
+            if (currentId && (href === '#' + currentId || href === '/#' + currentId)) {
+                link.classList.add('active');
+            }
+        });
+    }
+};
 
 // Navigation
 const Navigation = {
