@@ -15,6 +15,12 @@ class Config
                 }
             }
         }
+        echo '<pre>Chemin .env utilisé : ' . $envFile . '</pre>';
+        if (file_exists($envFile)) {
+            echo '<pre>Le fichier .env existe et est accessible.</pre>';
+        } else {
+            echo '<pre>Le fichier .env est introuvable !</pre>';
+        }
     }
     
     public static function get($key, $default = null)
