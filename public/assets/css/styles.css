@@ -432,21 +432,9 @@ header {
 .hero-content .hero-image img {
     width: 100vw !important;
     max-width: 100vw !important;
-    height: 38vh !important;
+    height: 100vh !important;
     object-fit: cover !important;
     object-position: center center !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    display: block;
-}
-.hero-content .hero-image img {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    height: 97vh !important;
-    object-fit: cover !important;
-    object-position: bottom center !important;
     margin: 0 !important;
     padding: 0 !important;
     border-radius: 0 !important;
