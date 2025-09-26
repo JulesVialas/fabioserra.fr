@@ -20,11 +20,8 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./
         server-dir: ./www/
-        exclude: |
-          .env
+        dangerous-clean-slate: true
           
     - name: Deployment notification
       run: |
         echo "✅ Deployment completed successfully!"
-    - name: Afficher la valeur du secret (debug uniquement)
-      run: echo "${{ secrets.FTP_HOST }}"
