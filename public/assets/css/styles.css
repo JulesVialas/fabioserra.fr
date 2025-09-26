@@ -1,3 +1,41 @@
+.section-actus-bg {
+    background: var(--light-gray, #f5f5f5) !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+/* Signature lettre en bleu principal */
+.lettre-signature {
+    color: var(--primary-blue, #2e537b);
+}
+/* ===== Style pour la section lettre ===== */
+.lettre-content {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 2rem 1.5rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+.lettre-text {
+    text-align: justify;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #222;
+}
+.lettre-text h2.section-title {
+    text-align: left;
+    margin-bottom: 1.2rem;
+}
+@media (max-width: 600px) {
+    .lettre-content {
+        padding: 1rem 0.5rem;
+    }
+    .lettre-text {
+        font-size: 1rem;
+    }
+}
+
 /* Couleur uniforme pour tous les placeholders */
 input::placeholder,
 textarea::placeholder {
@@ -127,6 +165,13 @@ html {
 
 body {
     font-family: 'Montserrat', Arial, sans-serif;
+.section-actus-bg {
+    background: var(--light-gray, #f5f5f5) !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+}
     line-height: var(--line-height-base);
     color: var(--dark-gray);
     background: var(--white);
@@ -1280,6 +1325,7 @@ a:focus {
     margin-bottom: var(--spacing-md);
 }
 .actus-title {
+    padding-top: 20px;
     text-align: left;
     margin-bottom: 0;
     flex-shrink: 0;

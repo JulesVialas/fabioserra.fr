@@ -11,6 +11,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/../src/views/components/header.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/../src/views/components/hero.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/../src/views/components/lettre.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/../src/views/components/actualites.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/../src/views/components/informations.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/../src/views/components/consultation-citoyenne.php';
 ?>
 </main>

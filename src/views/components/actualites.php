@@ -1,4 +1,4 @@
-<section id="actualites" class="section section-actus-bg">
+<section id="actualites" class="section-actus-bg">
     <div class="container">
         <div class="actus-header-row">
             <h2 class="section-title actus-title">Dernières actualités</h2>
@@ -14,3 +14,5 @@
         </div>
     </div>
 </section>
+<br>
+<br>
