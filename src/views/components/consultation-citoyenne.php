@@ -2,7 +2,6 @@
     <div class="container">
         <div class="section-header">
             <h2 class="section-title">Consultation citoyenne</h2>
-            <p class="section-description">Participez à la construction de l'avenir de Muret en donnant votre avis sur les priorités de notre ville.</p>
         </div>
         <div class="form-container">
             <form method="post" action="/" class="form">

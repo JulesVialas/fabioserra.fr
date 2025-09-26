@@ -12,10 +12,9 @@
                 <span class="burger-line"></span>
             </button>
             <ul class="nav-menu" id="nav-menu" role="menubar">
-                <li class="nav-item" role="none"><a href="/#accueil" class="nav-link" role="menuitem">Accueil</a></li>
                 <li class="nav-item" role="none"><a href="/#actualites" class="nav-link" role="menuitem">Actualités</a></li>
+                <li class="nav-item" role="none"><a href="/#equipe" class="nav-link" role="menuitem">Équipe</a></li>
                 <li class="nav-item" role="none"><a href="/#consultation-citoyenne" class="nav-link" role="menuitem">Consultation</a></li>
-                <li class="nav-item" role="none"><a href="/#contact" class="nav-link" role="menuitem">Contact</a></li>
             </ul>
         </nav>
     </div>
