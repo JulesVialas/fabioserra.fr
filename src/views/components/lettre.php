@@ -1,4 +1,4 @@
-<section>
+<section class="lettre">
     <div class="lettre-content">
         <div class="lettre-text">
             <h2 class="section-title">Chères Muretaines, chers Muretains, </h2>    
@@ -15,7 +15,7 @@
                 <br><br>La candidature que je vous présente est celle de tous les patriotes et de toutes les droites muretaines, celle de personnes volontaires, unies et dynamiques dans l'intérêt des Muretains.
                 <br><br>Pour soutenir la dynamique et retrouver Muret, j’ai besoin de vous. Participez à mon projet citoyen en cliquant ici.
                 <br><br>Muretaines, Muretains, <b>ensemble retrouvons Muret</b>.
-                <br><br><b class="lettre-signature">Fabio Serra, candidat à la mairie de Muret</b>
+                <br><br><b class="section-title">Fabio Serra, candidat à la mairie de Muret</b>
             </p>
         </div>
     </div>

@@ -4,6 +4,11 @@
     border-radius: 0 !important;
     box-shadow: none !important;
 }
+.lettre {
+    padding: 2rem 0;
+    padding-left: 150px;
+    padding-right: 150px;
+}
 /* Signature lettre en bleu principal */
 .lettre-signature {
     color: var(--primary-blue, #2e537b);
@@ -19,7 +24,6 @@
 }
 .lettre-text {
     text-align: justify;
-    font-size: 1.1rem;
     line-height: 1.7;
     color: #222;
 }
@@ -800,7 +804,7 @@ textarea::placeholder {
 }
 
 #consultation-citoyenne form {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 

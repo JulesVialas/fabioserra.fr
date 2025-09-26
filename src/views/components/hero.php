@@ -5,6 +5,4 @@
             <img src="/assets/images/hero.webp" alt="Retrouvons Muret ! avec Fabio Serra"/>
         </div>
     </div>   
-    <br>
-    <br> 
 </section>
