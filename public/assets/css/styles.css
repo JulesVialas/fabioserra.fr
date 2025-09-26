@@ -625,6 +625,26 @@ header {
         justify-content: center !important;
         align-items: center !important;
     }
+
+    /* Ajout de padding latéral pour éviter que les images et textes collent aux bords sur mobile */
+    .hero-content,
+    .hero-col-text,
+    .hero-col-img,
+    #accueil p,
+    #accueil h1,
+    #accueil h2,
+    #accueil h3 {
+        padding-left: var(--spacing-md);
+        padding-right: var(--spacing-md);
+        box-sizing: border-box;
+    }
+    .hero-content .hero-image img,
+    .hero-col-img img {
+        margin-left: var(--spacing-md);
+        margin-right: var(--spacing-md);
+        width: calc(100% - 2 * var(--spacing-md));
+        max-width: 100%;
+    }
 }
 
 /* === SECTIONS === */
