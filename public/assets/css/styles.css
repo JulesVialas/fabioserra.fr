@@ -714,6 +714,14 @@ textarea {
     min-height: 120px;
 }
 
+/* Placeholder textarea avec la police du site */
+textarea::placeholder {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 1rem;
+    color: var(--gray);
+    opacity: 1;
+}
+
 /* Formulaire consultation citoyenne */
 #consultation-citoyenne {
     background: var(--light-blue);

@@ -63,7 +63,6 @@
                         <label class="radio-label"><input type="radio" name="age" value="Plus de 65 ans" class="form-radio"> Plus de 65 ans</label>
                     </div>
                 </div>
-
                 <button type="submit" class="btn btn-primary form-submit">Envoyer ma participation</button>
             </form>
         </div>
