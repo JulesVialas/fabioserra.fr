@@ -13,7 +13,7 @@
                 <br><br>En résumé, nous allons améliorer votre qualité de vie à Muret.
                 <br><br>Depuis 2024, le Rassemblement National est <b>premier parti de Muret, en tête aux élections européennes et législatives</b>.  Nous sommes  les seuls en capacité de remporter l’élection municipale de mars prochain et de renouveler le paysage politique.
                 <br><br>La candidature que je vous présente est celle de tous les patriotes et de toutes les droites muretaines, celle de personnes volontaires, unies et dynamiques dans l'intérêt des Muretains.
-                <br><br>Pour soutenir la dynamique et retrouver Muret, j’ai besoin de vous. Participez à mon projet citoyen en cliquant ici.
+                <br><br>Pour soutenir la dynamique et retrouver Muret, j’ai besoin de vous. Participez à mon projet citoyen en cliquant <a href="#consultation-citoyenne">ici</a>.
                 <br><br>Muretaines, Muretains, <b>ensemble retrouvons Muret</b>.
                 <br><br><b class="section-title">Fabio Serra, candidat à la mairie de Muret</b>
             </p>
