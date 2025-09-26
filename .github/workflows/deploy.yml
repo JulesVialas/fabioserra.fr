@@ -22,7 +22,7 @@ jobs:
         server-dir: ./www/
         exclude: |
           .env
-          .git
+          .git*
           .github
           .vscode
           node_modules
