@@ -12,7 +12,7 @@
             <div class="hero-col hero-col-text">
                 <h1 class="hero-title">Recevez nos bulletins d’informations par mail</h1>
                 <p class="hero-description">Restez connectés à Retrouvons Muret : annonces, rencontres, propositions.
-                    <br>En vous inscrivant, vous recevrez régulièrement une lettre simple, claire et vivante, par mail pour comprendre, participer et agir aux côtés de Fabio Serra</p>
+                    <br>En vous inscrivant, vous recevrez régulièrement une lettre simple, claire et vivante, par mail pour comprendre, participer et agir aux côtés de Fabio Serra.</p>
                 <a href="#newsletter" class="btn btn-primary hero-cta" role="button">S’inscrire à la newsletter</a>
             </div>
             <div class="hero-col hero-col-img">
