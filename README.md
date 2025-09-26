@@ -39,4 +39,4 @@ Ce projet est distribué sous licence libre. Voir le fichier LICENSE si présent
 
 ## Auteur
 
-Fabio Serra
+Jules Vialas
