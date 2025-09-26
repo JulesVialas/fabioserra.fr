@@ -408,31 +408,37 @@ header {
 #accueil {
     background: var(--white);
     color: var(--black);
-    padding: var(--spacing-2xl) 0;
+    padding: 0 !important;
     position: relative;
     overflow: hidden;
 }
 
 /* Centrage et réduction de la première section du hero */
 .hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-bottom: var(--spacing-2xl);
+    padding: 0 !important;
+    margin: 0 !important;
 }
 .hero-content .hero-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: var(--spacing-lg);
+    width: 100vw;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+    display: block;
 }
 .hero-content .hero-image img {
-    width: 90%;
-    height: auto;
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-lg);
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: 30% !important;
+    object-fit: cover !important;
+    object-position: top center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    display: block;
 }
 .hero-content .hero-title,
 .hero-content .hero-subtitle,
@@ -1353,8 +1359,8 @@ a:focus {
 .footer-socials-vertical {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-        gap: 2rem;
+    align-items: center;
+    gap: 2rem;
 }
 @media (max-width: 900px) {
     .footer-content--with-contact {
@@ -1362,9 +1368,27 @@ a:focus {
         gap: 2rem;
     }
     .footer-links-vertical,
-    .footer-links--vertical,
-    .footer-socials-vertical {
+    .footer-links--vertical {
         align-items: flex-start;
         justify-content: flex-start;
+    }
+
+    /* Centrage de la partie contact et réseaux sociaux dans le footer */
+    .footer-contact,
+    .footer-socials-vertical {
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Réseaux sociaux en horizontal uniquement sur mobile */
+    .footer-socials-vertical {
+        flex-direction: row !important;
+        gap: 1.5rem !important;
+    }
+    .footer-socials-vertical a {
+        margin: 0 !important;
     }
 }

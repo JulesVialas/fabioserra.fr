@@ -1,7 +1,7 @@
 <section id="consultation-citoyenne" class="section">
     <div class="container">
         <div class="section-header">
-            <h2 class="section-title">Consultation citoyenne</h2>
+            <h2 class="section-title">Participez à la consultation citoyenne</h2>
         </div>
         <div class="form-container">
             <form method="post" action="/" class="form">
