@@ -1,3 +1,8 @@
+/* Placeholders Montserrat pour tous les formulaires */
+input::placeholder,
+textarea::placeholder {
+    font-family: 'Montserrat', Arial, sans-serif !important;
+}
 
 /* Footer navigation et réseaux sociaux - version optimisée */
 .footer-links--vertical,
@@ -421,9 +426,9 @@ header {
 .hero-content .hero-image img {
     width: 100vw !important;
     max-width: 100vw !important;
-    height: 80vh !important;
+    height: 38vh !important;
     object-fit: cover !important;
-    object-position: bottom center !important;
+    object-position: center center !important;
     margin: 0 !important;
     padding: 0 !important;
     border-radius: 0 !important;

@@ -9,7 +9,7 @@
                 
                 <div class="form-group">
                     <label for="quartier">Dans quel quartier de Muret vivez-vous ? *</label>
-                    <input type="text" id="quartier" name="quartier" required placeholder="Ex: Centre-ville, allées Niel, etc." class="form-input">
+                    <input type="text" id="quartier" name="quartier" required placeholder="Quartier des Bonnets, Quartier Capèle, Ox, etc." class="form-input">
                 </div>
 
                 <div class="form-group">
