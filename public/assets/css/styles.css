@@ -16,8 +16,6 @@
 /* ===== Style pour la section lettre ===== */
 .lettre-content {
     max-width: 1400px;
-    margin: 2rem auto;
-    padding: 2rem 1.5rem;
     background: #fff;
 }
 .lettre-text {
