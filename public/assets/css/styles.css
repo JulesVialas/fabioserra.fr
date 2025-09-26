@@ -9,6 +9,27 @@
     padding-left: 150px;
     padding-right: 150px;
 }
+
+@media (max-width: 900px) {
+    .lettre {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .lettre {
+        padding-left: 0.2rem;
+        padding-right: 0.2rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    .lettre-content {
+        padding: 0.5rem 0.2rem;
+    }
+}
 /* Signature lettre en bleu principal */
 .lettre-signature {
     color: var(--primary-blue, #2e537b);
