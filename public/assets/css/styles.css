@@ -418,22 +418,24 @@ header {
     padding: 0 !important;
     margin: 0 !important;
 }
-.hero-content .hero-image {
-    width: 100vw;
+.hero-content .hero-image img {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: 80vh !important;
+    object-fit: cover !important;
+    object-position: bottom center !important;
     margin: 0 !important;
     padding: 0 !important;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    transform: translateX(-50%);
+    border-radius: 0 !important;
+    box-shadow: none !important;
     display: block;
 }
 .hero-content .hero-image img {
     width: 100vw !important;
     max-width: 100vw !important;
-    height: 30% !important;
+    height: 97vh !important;
     object-fit: cover !important;
-    object-position: top center !important;
+    object-position: bottom center !important;
     margin: 0 !important;
     padding: 0 !important;
     border-radius: 0 !important;
