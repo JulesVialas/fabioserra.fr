@@ -22,7 +22,7 @@
         <div class="hero-row hero-row-2">
             <div class="hero-col hero-col-text">
                 <h2 class="hero-title">Engagez-vous pour retrouver Muret !</h2>
-                <p class="hero-description">Je veux une démocratie de proximité où la voix de tous les Muretains compte.<br>Votre voix compte dès aujourd’hui, pas seulement le jour du vote. Pour s’engager, écrivez-nous par mail.</p>
+                <p class="hero-description">Je veux une démocratie de proximité où la voix de tous les Muretains compte. Votre voix compte dès aujourd’hui, pas seulement le jour du vote.<br>Pour s’engager, écrivez-nous par mail.</p>
                 <a href="/#contact" class="btn btn-primary hero-cta" role="button">Nous contacter</a>
             </div>
             <div class="hero-image hero-col-img">

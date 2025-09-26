@@ -80,10 +80,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/../src/views/components/header.php';
                         <p>Si vous estimez que le traitement de vos données porte atteinte à vos droits, vous pouvez introduire une réclamation auprès de la CNIL : <strong>www.cnil.fr</strong></p>
                     </article>
                 </div>
-
                 <div class="legal-footer">
                     <p class="legal-update">Dernière mise à jour : <?= date('d/m/Y') ?></p>
-                    <a href="/" class="btn btn-primary">Retour à l'accueil</a>
                 </div>
             </div>
         </div>

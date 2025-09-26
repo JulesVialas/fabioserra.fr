@@ -51,10 +51,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/../src/views/components/header.php';
                         <p>L'éditeur s'efforce de maintenir les informations de ce site à jour et exactes, mais ne peut garantir l'exactitude, la complétude ou l'actualité des informations diffusées.</p>
                     </article>
                 </div>
-
                 <div class="legal-footer">
                     <p class="legal-update">Dernière mise à jour : <?= date('d/m/Y') ?></p>
-                    <a href="/" class="btn btn-primary">Retour à l'accueil</a>
                 </div>
             </div>
         </div>
