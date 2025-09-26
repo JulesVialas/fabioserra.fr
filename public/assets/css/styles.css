@@ -1,3 +1,9 @@
+/* Couleur uniforme pour tous les placeholders */
+input::placeholder,
+textarea::placeholder {
+    color: #888 !important;
+    opacity: 1 !important;
+}
 /* Placeholders Montserrat pour tous les formulaires */
 input::placeholder,
 textarea::placeholder {
