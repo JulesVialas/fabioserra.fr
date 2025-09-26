@@ -20,7 +20,14 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./
         server-dir: ./www/
-        dangerous-clean-slate: true
+        exclude: |
+          .env
+          .git
+          .github
+          .vscode
+          node_modules
+          *.log
+          .DS_Store
           
     - name: Deployment notification
       run: |
