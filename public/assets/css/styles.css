@@ -27,7 +27,12 @@
         padding-bottom: 1rem;
     }
     .lettre-content {
-        padding: 0.5rem 0.2rem;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    .lettre-paragraphe {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
     }
 }
 /* Signature lettre en bleu principal */
@@ -1350,6 +1355,9 @@ a:focus {
     text-align: left;
     margin-bottom: 0;
     flex-shrink: 0;
+    font-size: var(--font-size-3xl) !important;
+    font-weight: 700;
+    color: var(--primary-blue);
 }
 .actus-socials {
     display: flex;
@@ -1364,7 +1372,7 @@ a:focus {
         gap: 0.5rem;
     }
     .actus-title {
-        font-size: 1.1rem;
+        font-size: var(--font-size-2xl) !important;
     }
     .actus-socials {
         margin-left: auto;
