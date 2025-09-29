@@ -9,6 +9,12 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/../src/controllers/PolitiqueConfident
 require_once $_SERVER['DOCUMENT_ROOT'] . '/../src/controllers/LoginController.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/../src/controllers/DashboardController.php';
 
+// Maintenance temporaire
+header('HTTP/1.1 503 Service Unavailable');
+header('Retry-After: 3600'); // 1 heure
+include __DIR__ . '/maintenance.html';
+exit;
+
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $method = strtolower($_SERVER['REQUEST_METHOD']);
 
